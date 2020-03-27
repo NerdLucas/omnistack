@@ -21,6 +21,7 @@ module.exports = {
 
         return response.status(204).send();
     },
+    
     async create(request, response ){
         const {title, description, value} = request.body; 
         const ong_id = request.headers.authorization;
@@ -38,10 +39,9 @@ module.exports = {
     async index(request, response){
 
         const [count] = await conection('incidents').count();
-        
-        
 
         const { page = 1} = request.query;
+
         const incidents = await (conection('incidents')
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
             .limit(5)
