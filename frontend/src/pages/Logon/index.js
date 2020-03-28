@@ -1,11 +1,16 @@
+//Importações do React
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
+
+//Api para concexão com o banco de dados:
+import api from '../../services/api'
+
+// Estilização:
 import './styles.css';
 import herosImg from '../../assets/heroes.png'
 import logoImg from '../../assets/logo.svg'; 
 import {FiLogIn} from 'react-icons/fi'
 
-import api from '../../services/api'
 
 export default function Logon(){
 

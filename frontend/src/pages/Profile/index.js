@@ -53,6 +53,7 @@ export default function Profile(){
                 <span>Bem vinda, {ongName}</span>
 
                 <Link className="button" to="/incidents/new" >Cadastrar novo caso!</Link>
+                
                 <button onClick={handleLogout} type="button">
                     <FiPower size={18} color="e02041"/>
                 </button>

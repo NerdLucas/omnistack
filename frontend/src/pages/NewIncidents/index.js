@@ -14,6 +14,7 @@ export default function NewIncident(){
     const history = useHistory();
 
     const ongId = localStorage.getItem('ongId');
+
     async function handleNewIncident(e){
         e.preventDefault();
 
@@ -71,7 +72,7 @@ export default function NewIncident(){
                         value={value}
                         onChange = {e => setValue(e.target.value)}
 
-                V />
+                    />
 
                     <button className="button" type="submit" onClick={handleNewIncident}>Cadastrar</button>
                 </form>

@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Logon from './pages/Logon';
 import Profile from './pages/Profile';
 import NewIncident from './pages/NewIncidents';
+
 export default function Routes(){
     return(
         <BrowserRouter>
