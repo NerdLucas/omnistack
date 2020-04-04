@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import { useNavigation, useRoute } from "@react-navigation/native";
+
 import logoImg from '../../assets/logo.png';
 import { Feather } from '@expo/vector-icons';
 import styles from './styles';
+
 import * as MailComposer from 'expo-mail-composer';
 
 
@@ -13,10 +15,6 @@ export default function Detail(){
 
     const route = useRoute();
     const incident = route.params.incident;
-    
-
-
-
     const navigation = useNavigation();
 
     const mensage = `Olá ${incident.nome}, estou entrando em contato pois gostaria de ajudar no caso da "${incident.title}" com o valor de ${Intl.NumberFormat('pt-Br',{
@@ -33,10 +31,9 @@ export default function Detail(){
             subject: `Herói do caso: ${incident.title}`,
             recipients: [`${incident.email}`],
             body: mensage
-        }); 
-        
-
+        });
     }
+    
     function navigateBack(){
         navigation.goBack();
     }

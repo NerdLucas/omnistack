@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import Constants from 'expo-constants';
+
 import api from '../../services/api';
 
 import styles from './styles';
@@ -26,13 +27,13 @@ export default function Incidents(){
             return;
         }
 
-        if (total > 0 && incidents.length == total){
+        if (total > 0 && incidents.length === total){
             return;
         }
 
         setLoading(true);
         const response = await api.get('incidents', {
-            params: (page)
+            params: {page}
         });
         
         setTotal(response.headers['x-total-count'])
